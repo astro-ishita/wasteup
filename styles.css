@@ -104,6 +104,12 @@ a { text-decoration: none; color: inherit; }
     letter-spacing: 0.01em;
 }
 
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 2.25rem;
+}
+
 .nav-links {
     display: flex;
     gap: 2.5rem;
@@ -117,6 +123,51 @@ a { text-decoration: none; color: inherit; }
     position: relative;
     padding-bottom: 4px;
     transition: color var(--transition-quick);
+}
+
+/* Language switcher */
+.lang-switch {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    padding-left: 1.5rem;
+    border-left: 1px solid var(--whisper);
+}
+
+.lang-switch a {
+    color: var(--forest);
+    opacity: 0.4;
+    padding: 0.2rem 0.15rem;
+    position: relative;
+    transition: opacity var(--transition-quick), color var(--transition-quick);
+}
+
+.lang-switch a:hover {
+    opacity: 0.85;
+}
+
+.lang-switch a.lang-active {
+    opacity: 1;
+    color: var(--forest);
+}
+
+.lang-switch a.lang-active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -3px;
+    height: 1px;
+    background: var(--gold);
+}
+
+.lang-divider {
+    color: var(--forest);
+    opacity: 0.3;
+    font-weight: 300;
 }
 
 .nav-links a::after {
@@ -140,6 +191,10 @@ a { text-decoration: none; color: inherit; }
 
 @media (max-width: 640px) {
     .nav-links { display: none; }
+    .lang-switch {
+        padding-left: 0;
+        border-left: none;
+    }
 }
 
 /* ============================================
